@@ -1,3 +1,5 @@
+"use strict";
+
 let pracMarkTotal = 6; // 6/8 marks
 let worksheetTotal = 3.5; // 3.5/4 marks
 let quizMarkTotal = 8.75; // 8.75/12 marks

@@ -1,3 +1,4 @@
+
 let inputWords = [];
 let valid = 0;
 let invalid = 0;

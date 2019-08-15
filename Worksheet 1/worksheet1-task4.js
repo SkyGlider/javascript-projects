@@ -1,43 +1,35 @@
 
+function enrolStudent() {
 
-function submitInfo() {
-
-  let firstName = document.getElementById("firstNameIn").value;
-  let lastName = document.getElementById("lastNameIn").value;
-  let dob = document.getElementById("dobIn").value;
+  let selectedGender = null;
 
   if (document.getElementById("maleIn").checked) {
-    var gender = "male";
+    selectedGender = "Male";
   }
   else if (document.getElementById("femaleIn").checked) {
-    var gender = "female";
+    selectedGender = "Female";
   }
   else if (document.getElementById("othergenIn").checked){
-    var gender = "other";
+    selectedGender = "Other";
   }
 
-  let country = document.getElementById("countryIn").value;
-  let address = document.getElementById("addressIn").value;
-  let email = document.getElementById("emelIn").value;
 
   let student = {
 
-    stufName: firstName,
-    stulName: lastName,
-    stuDOB: dob,
-    stuGender: gender,
-    stuCountry: country,
-    stuAddress: address,
-    stuEmail:email
+    firstName: document.getElementById("firstNameIn").value,
+    lastName: document.getElementById("lastNameIn").value,
+    dateOfBirth: document.getElementById("dobIn").value,
+    gender: selectedGender,
+    country: document.getElementById("countryIn").value,
+    address: document.getElementById("addressIn").value,
+    email:document.getElementById("emelIn").value
   }
 
-  let output = "Name : " + student.stufName + ", "+ student.stulName + "<br>" + "Date of Birth : " + student.stuDOB + "<br>" +"Gender : " + student.stuGender + "<br>" + "Country : " + student.stuCountry + "<br>" + "Address : " + student.stuAddress + "<br>" + "Email : " + student.stuEmail;
-
   let division1 = document.getElementById("resultArea");
+  let output = "Name : " + student.firstName + ", "+ student.lastName.toUpperCase() + "<br>" + "Date of Birth : " + student.dateOfBirth + "<br>" +"Gender : " + student.gender + "<br>" + "Country : " + student.country + "<br>" + "Address : " + student.address + "<br>" + "Email : " + student.email;
   division1.innerHTML = output;
 
 }
 
 let submitBtn = document.getElementById("submitBtn");
-
-submitBtn.onclick = submitInfo;
+submitBtn.onclick = enrolStudent;

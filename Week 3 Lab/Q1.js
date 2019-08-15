@@ -1,3 +1,5 @@
+"use strict";
+
 function daySuffix (day) {
 
   for (var i = 1; i < 32; i++) {

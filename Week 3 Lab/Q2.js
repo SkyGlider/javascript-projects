@@ -1,3 +1,4 @@
+
 function componentMarksToGrade(myMarks) {
 
   let totalInternal = myMarks.pracMark + myMarks.quizMark + myMarks.worksheetMark + myMarks.ass1Mark + myMarks.ass2Mark;

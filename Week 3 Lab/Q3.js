@@ -1,3 +1,4 @@
+"use strict";
 function kgToLbs(val) {
   return (val * 2.20462).toFixed(3);
 }

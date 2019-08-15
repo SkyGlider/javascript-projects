@@ -79,15 +79,14 @@ let data = [
     }
 ];
 
-var i;
-for (i = 0; i<data.length; i++){
+
+for (var i = 0; i<data.length; i++){
 
   currentSem = data[i];
   console.log("Semester: " + currentSem.semester + ", " + currentSem.year);
   unitArray = currentSem.units;
 
-  var j;
-  for (j=0; j<unitArray.length; j++){
+  for (var j=0; j<unitArray.length; j++){
     console.log(unitArray[j].code + ": " + unitArray[j].mark + " (" + unitArray[j].grade + ")")
   }
 

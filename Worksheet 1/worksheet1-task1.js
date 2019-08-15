@@ -89,26 +89,29 @@ let data = [
     }
 ];
 
-var i;
-var gradexcp_cum = 0;
-var total_cp = 0;
-var semCount = 0;
-var wamCount = 0;
-var wamFinal = 0;
 
-for (i = 0; i<data.length; i++){
+let gradexcp_cum = 0; //cumulative counter for grade * credit pts
+let total_cp = 0; //total credit pts
+let semCount = 0;
+let wamCount = 0;
+let wamFinal = 0;
 
+for ( let i = 0; i<data.length; i++){
 
+  //select and print semester title
   let currentSem = data[i];
   console.log("Semester: " + currentSem.semester + ", " + currentSem.year);
-
+  //select current semester units from object
   let unitArray = currentSem.units;
-  var j;
-  for (j=0; j<unitArray.length; j++){
+
+  for (let j=0; j<unitArray.length; j++){
+
+    //print units and marks
     console.log(unitArray[j].code + ": " + unitArray[j].mark + " (" + unitArray[j].grade + ")");
     gradexcp_cum += GPA_LOOKUP[unitArray[j].grade] *6;
     total_cp += 6;
 
+    //first 2 semester, WAM weightage is only 0.5
     if (i+1 < 3) {
       wamCount += unitArray[j].mark * 6 * 0.5;
     }
@@ -123,10 +126,11 @@ for (i = 0; i<data.length; i++){
 
 console.log("Overall GPA = " + (gradexcp_cum/total_cp).toFixed(2));
 
-if (i+1 < 3) {
+if (data.length+1 < 3) {
   wamFinal = wamCount/(total_cp * 0.5);
 }
 else {
+  //total credit pts in first 2 sem is 48, but only weighs 0.5, so minus 24
   wamFinal = (wamCount)/(total_cp-24);
 }
 console.log("Overall WAM = " +wamFinal);

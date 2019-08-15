@@ -3,51 +3,76 @@
     <head>
         <title>Enrolling a student</title>
         <style>
+            h2{
+              font-size:15px;
+              font-weight: bold;
+            }
+
+            p{
+              font-size:15px;
+              font-weight: normal;
+            }
+
+            .longsize{
+              width:300px;
+            }
+
+            .halfsize{
+              width:145px;
+            }
+
+            .flatblue{
+              width:60px;
+              height:25px;
+              background-color:DarkCyan;
+              color:White;
+              border:none;
+            }
         </style>
     </head>
 
     <body>
         <h1>Enrol a student.</h1>
 
-        <p>Full name<br>
-        <input type="text" placeholder="First" id="firstNameIn">
-        <input type="text" placeholder="Last" id="lastNameIn">
-        </p>
+        <h2>Full name<br>
+        <input class="halfsize" type="text" placeholder="First" id="firstNameIn" >
+        <input class="halfsize" type="text" placeholder="Last" id="lastNameIn" >
+        </h2>
 
-        <p>Date of Birth<br>
-        <input type="date" id="dobIn">
-        </p>
+        <h2>Date of Birth<br>
+        <input class="longsize" type="date" id="dobIn" >
+        </h2>
 
-        <p>Gender<br>
-        <input type="radio" id="maleIn">Male<br>
-        <input type="radio" id="femaleIn">Female<br>
-        <input type="radio" id="othergenIn">Other
-        </p>
+        <h2>Gender<br>
+          <p>
+            <input type="radio" id="maleIn" >Male<br>
+            <input type="radio" id="femaleIn">Female<br>
+            <input type="radio" id="othergenIn">Other
+          </p>
+        </h2>
 
-        <p>Country<br>
-        <select name="Country" id="countryIn">
-          <option value="Malaysia">Malaysia</option>
+        <h2>Country<br>
+        <select class="longsize" name="Country" id="countryIn" >
+          <option value="New Zealand">New Zealand</option>
           <option value="Australia">Australia</option>
         </select>
-        </p>
+        </h2>
 
-        <p>Address<br>
-        <input type="text" id="addressIn">
-        </p>
+        <h2>Address<br>
+        <input class="longsize" type="text" id="addressIn">
+        </h2>
 
-        <p>E-mail<br>
-        <input type="text" id="emelIn">
-        </p>
+        <h2>E-mail<br>
+        <input class="longsize" type="text" id="emelIn">
+        </h2>
 
-        <p>
-        <button id="submitBtn">Submit</button>
-        </p>
+        <h2>
+        <button class="flatblue" id="submitBtn">Submit</button>
+        </h2>
 
 
         <h1>Result</h1>
-
         <div id="resultArea"></div>
-
 
         <script src = "./worksheet1-task4.js"> </script>
     </body>

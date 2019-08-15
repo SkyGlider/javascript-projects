@@ -208,39 +208,52 @@ let studentList = [
     }
 ];
 
+
 function getGPA(person){
 
-  var gradexcp = 0;
-  var totalcp = 0;
+  //cumulative counters
+  let gradexcp = 0;
+  let totalcp = 0;
 
-  for (var i = 0; i < person.results.length; i++) {
+  //run thru list of semester for student
+  for (let i = 0; i < person.results.length; i++) {
+
+    //select current semester
     let currentSem = person.results[i];
 
-    for (var j = 0; j < currentSem.units.length; j++) {
+    //run thru units in current semester
+    for (let j = 0; j < currentSem.units.length; j++) {
       gradexcp += GPA_LOOKUP[currentSem.units[j].grade]*6;
       totalcp += 6;
-
     }
+
   }
 
+  //return GPA
   return (gradexcp/totalcp).toFixed(2)
 }
 
 function getWAM(person){
 
-  var wamCount = 0;
-  var wamFinal;
-  var totalcp = 0;
+  //cumulative counters
+  let wamCount = 0;
+  let wamFinal;
+  let totalcp = 0;
 
-  for (var i = 0; i < person.results.length; i++) {
+  //run thru every semester
+  for (let i = 0; i < person.results.length; i++) {
 
+    //select current semester
     let currentSem = person.results[i];
 
-    for (var j = 0; j < currentSem.units.length; j++) {
+    //run thru every unit
+    for (let j = 0; j < currentSem.units.length; j++) {
 
+      //WAM calculations
       totalcp += 6;
 
       if (i+1 < 3) {
+        //weightage is 0.5 in first 2 sem
         wamCount += currentSem.units[j].mark * 6 * 0.5;
       }
       else {
@@ -250,17 +263,19 @@ function getWAM(person){
     }
   }
 
-  if (i+1 < 3) {
+  if (person.results.length+1 < 3) {
     wamFinal = wamCount/(totalcp * 0.5);
   }
   else {
     wamFinal = (wamCount)/(totalcp-24);
   }
 
+  //returns WAM
   return wamFinal.toFixed(3);
 }
 
-for (var i = 0; i < studentList.length; i++) {
+//runs thru every student
+for (let i = 0; i < studentList.length; i++) {
   let thisGPA = getGPA(studentList[i]);
   let thisWAM = getWAM(studentList[i]);
 
