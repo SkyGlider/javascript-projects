@@ -1,3 +1,4 @@
+"use strict";
 
 function enrolStudent() {
 
@@ -14,11 +15,14 @@ function enrolStudent() {
   }
 
 
+  let tempDate = new Date(document.getElementById("dobIn").value);
+  let birthDate = tempDate.getDate() +"/" +tempDate.getMonth() + "/"+ tempDate.getFullYear();
+
   let student = {
 
     firstName: document.getElementById("firstNameIn").value,
     lastName: document.getElementById("lastNameIn").value,
-    dateOfBirth: document.getElementById("dobIn").value,
+    dateOfBirth: birthDate,
     gender: selectedGender,
     country: document.getElementById("countryIn").value,
     address: document.getElementById("addressIn").value,
