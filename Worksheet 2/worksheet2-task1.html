@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enrolling a student</title>
+        <style>
+            .formtitles{
+              font-size:15px;
+            }
+
+            .longsize{
+              width:300px;
+            }
+
+            .halfsize{
+              width:150px;
+            }
+
+            .resultStyle{
+              font-size:20px;
+            }
+
+
+        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </head>
+
+    <body>
+
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Enrol Student</span>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">Student Enrolment</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" onclick="window.location.href='http://www.skydeveloper.weebly.com'">Developer</a>
+          </nav>
+        </div>
+        <main class="mdl-layout__content">
+          <div class="page-content">
+
+            <label class="formtitles">Student ID : </label>
+            <div class="mdl-textfield mdl-js-textfield longsize" >
+              <input class="mdl-textfield__input" type="text" id="idIn" >
+              <label class="mdl-textfield__label" for="idIn">Enter Student ID</label>
+            </div>
+
+            <br>
+            <label class="formtitles">Full Name : </label>
+            <div class="mdl-textfield mdl-js-textfield" >
+              <input class="mdl-textfield__input halfsize" type="text" id="firstNameIn" >
+              <label class="mdl-textfield__label" for="firstNameIn">First</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input halfsize" type="text" id="lastNameIn" >
+              <label class="mdl-textfield__label" for="lastNameIn">Last</label>
+            </div>
+
+            <br>
+            <label class="formtitles">Date of birth : </label>
+            <div class = "mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input longsize" type="date" id="dobIn" >
+            </div>
+
+            <br>
+            <label class="formtitles">Gender : </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="maleIn">
+              <input type="radio" id="maleIn" class="mdl-radio__button" name="genderRadio" value="Male" >
+              <span class="mdl-radio__label">Male</span>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="femaleIn">
+              <input type="radio" id="femaleIn" class="mdl-radio__button" name="genderRadio" value="Female" >
+              <span class="mdl-radio__label">Female</span>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="othergenIn">
+              <input type="radio" id="othergenIn" class="mdl-radio__button" name="genderRadio" value="Other" >
+              <span class="mdl-radio__label">Other</span>
+            </label>
+
+            <br><br>
+            <label class="formtitles">Country : </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <select class="mdl-textfield__input" id="countryIn" name="countryIn">
+                <option></option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Australia">Australia</option>
+                <option value="Malaysia">Malaysia</option>
+              </select>
+            </div>
+
+            <br>
+            <label class="formtitles">Address : </label>
+            <div class="mdl-textfield mdl-js-textfield" >
+              <input class="mdl-textfield__input halfsize" type="text" id="addressIn" >
+              <label class="mdl-textfield__label" for="addressIn">Address</label>
+            </div>
+
+            <br>
+            <label class="formtitles">Phone Number : </label>
+            <div class="mdl-textfield mdl-js-textfield" >
+              <input class="mdl-textfield__input halfsize" type="text" id="phoneIn" >
+              <label class="mdl-textfield__label" for="phoneIn">Enter Phone Number</label>
+            </div>
+
+            <br>
+            <label class="formtitles">Email : </label>
+            <div class="mdl-textfield mdl-js-textfield" >
+              <input class="mdl-textfield__input halfsize" type="text" id="emelIn" >
+              <label class="mdl-textfield__label" for="emelIn">E-mail</label>
+            </div>
+
+            <h6></h6>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="submitBtn">
+              Submit
+            </button>
+
+            <hr>
+            <h5>Submission results:</h5>
+            <div class="resultStyle"id="resultArea">No submission yet.</div>
+
+          </div>
+        </main>
+      </div>
+
+      <script src = "./StudentClass.js"> </script>
+      <script src = "./worksheet2-task2.js"> </script>
+
+    </body>
+</html>

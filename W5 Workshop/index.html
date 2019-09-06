@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ENG1003 week 5 Workshop</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+
+    </head>
+
+    <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+      <!-- Title -->
+        <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+      </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Card and Deck</span>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content"><!-- Your content goes here -->
+
+          <form action="#">
+            <label>Card Value:</label>
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="cardValue">
+              <label class="mdl-textfield__label" for="cardValue">Value</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+            <label>Card Suit:</label>
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="cardSuit">
+              <label class="mdl-textfield__label" for="cardSuit">Suit</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="addBtn" onclick="addCard()">
+              <i class="material-icons">add</i>
+            </button>
+
+          </form>
+
+
+          <button class="mdl-button mdl-js-button mdl-button--raised " id="shuffleBtn" onclick="shuffleDeck()">
+            Shuffle
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--raised " id="newdeckBtn" onclick="createNewDeck()">
+            New Deck
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="refreshBtn" onclick="refreshDisplay()">
+              Refresh
+          </button>
+
+          <hr>
+          <table class="mdl-data-table mdl-js-data-table">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Value and Suit</th>
+              </tr>
+            </thead>
+            <tbody id="cardDisplay">
+            </tbody>
+          </table>
+
+          <hr>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"onclick="deal()" id="dealBtn">
+            Deal Card
+          </button>
+          <div id="dealtCardDisplay"></div>
+          <hr>
+          <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button type="button" class="mdl-snackbar__action"></button>
+          </div>
+
+        </div>
+    </main>
+    <script src="card_and_deck.js"></script>
+    </body>
+</html>

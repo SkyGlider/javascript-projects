@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ENG1003 week 3 prac exercise template</title>
+        <style>
+            #outputArea {
+                padding: .25em;
+                border: solid black 2px;
+                margin: 3em;
+            
+                height: 20em;
+                width: 20em;
+            
+                overflow-y: scroll;
+            
+                font-family: consolas, 'courier new', monospace;
+                font-size: 1em;
+                color: rgb(50, 50, 250);
+            
+                background-color: rgb(225,225,225) ;
+            }
+        </style>
+
+    </head>
+    
+    <body>
+        <div id="outputArea"></div>
+
+        <script>
+            class Item
+            {
+                constructor(itemName, weight)
+                {
+                    this._itemName = itemName;
+                    this._weight = weight;
+                }
+                
+                get itemName()
+                {
+                    return this._itemName;
+                }
+                
+                set itemName(newItem)
+                {
+                    this._itemName = newItem;
+                }
+                
+                toString()
+                {
+                    let output = "Item name: " + this._itemName + "<br>";
+                    output += "Weight: " + this._weight + "<br>";
+                    
+                    return output;
+                }
+            }
+            
+            class Person
+            {
+                constructor(name, address)
+                {
+                    this._name = name;
+                    this._address = address;
+                }
+            }
+            
+            class Package
+            {
+                constructor(items, sender, recipient)
+                {
+                    this._items = items;
+                    this._sender = sender;
+                    this._recipient = recipient;
+                }              
+            }
+            
+            class Courier
+            {
+                constructor(packages, company)
+                {
+                    this._packages = packages;
+                    this._company = company;
+           
+                }                    
+            }
+            
+            class Company
+            {
+                constructor(companyName, courierList)
+                {
+                    this._companyName = companyName;
+                    this._courierList = courierList;
+           
+                }                
+            }
+
+        </script>
+    </body>
+</html>
