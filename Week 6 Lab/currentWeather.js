@@ -65,5 +65,7 @@ function updateWeather(result)
   rowHTML+='<tr><th>'+'Summary'+'</th><td>'+result.currently.summary+'</td></tr>';
   rowHTML+='<tr><th>'+'Current Temperature'+'</th><td>'+result.currently.temperature+'C'+'</td></tr>';
   rowHTML+='<tr><th>'+'Pressure'+'</th><td>'+result.currently.pressure+'Pa'+'</td></tr>';
+  rowHTML+='<tr><th>'+'UV index'+'</th><td>'+result.currently.uvIndex+'Pa'+'</td></tr>';
+  rowHTML+='<tr><th>'+'Dewpoint'+'</th><td>'+result.currently.dewPoint+'Pa'+'</td></tr>';
   outputTableRef.innerHTML = rowHTML;
 }
